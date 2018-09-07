@@ -27,7 +27,7 @@ public class HomePageTest extends TestBase {
 		loginPage = new LoginPage();
 		testutil = new TestUtil();
 		homePage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
-		
+		// test command
 	}
 	
 	
