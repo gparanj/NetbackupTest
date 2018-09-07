@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Netbackup Automation Test]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Automation Test Suite(failed)">
+    <classes>
+      <class name="veritas.netbackup.testcases.ProtectionplanPageTest">
+        <methods>
+          <include name="CreateTest"/>
+          <include name="SetUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- veritas.netbackup.testcases.ProtectionplanPageTest -->
+    </classes>
+  </test> <!-- Automation Test Suite(failed) -->
+</suite> <!-- Failed suite [Netbackup Automation Test] -->
