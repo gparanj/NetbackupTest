@@ -15,7 +15,7 @@ public class CreateProtectionPlanPage extends TestBase {
 	@FindBy(xpath="//button[@class='mini vo ng-star-inserted']")
 	WebElement create;
 	
-	@FindBy(xpath="//*[text()=' Next ']")
+	@FindBy(xpath="//*[@class='vdl-button-bar']//*[text()=' Next ']")
 	WebElement next;
 	
 	@FindBy(xpath="//*[contains(text(),'Keep a copy for long-term retention')]")
@@ -23,6 +23,14 @@ public class CreateProtectionPlanPage extends TestBase {
 	
 	@FindBy(xpath="//*[contains(text(),'Finish')]")
 	WebElement finish;
+	
+	@FindBy(id="name")
+	WebElement name;
+	
+	@FindBy(id="description")
+	WebElement description;
+	
+	
 	
 	//Initializing the Page Objects
 		public CreateProtectionPlanPage() {
@@ -43,8 +51,9 @@ public class CreateProtectionPlanPage extends TestBase {
 		}
 
 		public void clickOnNext() {
-			next.click();		
+			next.click();	
 		}
+		
 	
 		public void clickOnRetention() {
 			retention.click();	
@@ -52,5 +61,13 @@ public class CreateProtectionPlanPage extends TestBase {
 	
 		public void clickOnFinish() {
 			finish.click();		
+		}
+		
+		public void clickOngetname(String ProtectionplanName) {
+			name.sendKeys(ProtectionplanName);		
+		}
+		
+		public void clickOngetdescription(String ProtectionplanDescription) {
+			description.sendKeys(ProtectionplanDescription);		
 		}
 	}

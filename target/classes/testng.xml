@@ -3,12 +3,16 @@
 <suite name="Netbackup Application Test Automation Test Suite">
 
 	<listeners>
-	<listener class-name= "com.qa.ExtentReportListener.ExtentReporterNG"/>
+	<listener class-name= "veritas.ExtentReportListener.ExtentReporterNG"/>
 	</listeners>
 	
 	<test name="Netbackup Test Cases">
 		<classes>
 			<class name="veritas.netbackup.testcases.LoginPageTest"/>
+			<class name="veritas.netbackup.testcases.DashboardPageTest"/>
+			<class name="veritas.netbackup.testcases.ProtectionplanPageTest"/>
+			<class name="veritas.netbackup.testcases.CreateProtectionPlanPageTest"/>
+			<class name="veritas.netbackup.testcases.VMwarePageTest"/>
 		</classes>	
 	</test>
-</suite> 
+</suite>

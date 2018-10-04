@@ -1,49 +1,183 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+<testng-results skipped="0" failed="0" ignored="0" total="14" passed="14">
   <reporter-output>
   </reporter-output>
-  <suite name="Netbackup Application Test Automation Test Suite" duration-ms="49744" started-at="2018-09-06T17:54:00Z" finished-at="2018-09-06T17:54:50Z">
+  <suite name="Netbackup Application Test Automation Test Suite" duration-ms="164652" started-at="2018-10-04T16:52:41Z" finished-at="2018-10-04T16:55:25Z">
     <groups>
     </groups>
-    <test name="Netbackup Test Cases" duration-ms="49744" started-at="2018-09-06T17:54:00Z" finished-at="2018-09-06T17:54:50Z">
-      <class name="veritas.netbackup.testcases.HomePageTest">
-        <test-method status="PASS" signature="SetUp()[pri:0, instance:veritas.netbackup.testcases.HomePageTest@7cbd213e]" name="SetUp" is-config="true" duration-ms="10197" started-at="2018-09-06T17:54:00Z" finished-at="2018-09-06T17:54:11Z">
+    <test name="Netbackup Test Cases" duration-ms="164652" started-at="2018-10-04T16:52:41Z" finished-at="2018-10-04T16:55:25Z">
+      <class name="veritas.netbackup.testcases.DashboardPageTest">
+        <test-method status="PASS" signature="SetUp()[pri:0, instance:veritas.netbackup.testcases.DashboardPageTest@382db087]" name="SetUp" is-config="true" duration-ms="8047" started-at="2018-10-04T16:53:38Z" finished-at="2018-10-04T16:53:47Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SetUp -->
-        <test-method status="PASS" signature="VMwareTest()[pri:0, instance:veritas.netbackup.testcases.HomePageTest@7cbd213e]" name="VMwareTest" duration-ms="2770" started-at="2018-09-06T17:54:11Z" finished-at="2018-09-06T17:54:13Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- VMwareTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:veritas.netbackup.testcases.HomePageTest@7cbd213e]" name="tearDown" is-config="true" duration-ms="5570" started-at="2018-09-06T17:54:13Z" finished-at="2018-09-06T17:54:19Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="SetUp()[pri:0, instance:veritas.netbackup.testcases.HomePageTest@7cbd213e]" name="SetUp" is-config="true" duration-ms="9419" started-at="2018-09-06T17:54:19Z" finished-at="2018-09-06T17:54:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SetUp -->
-        <test-method status="PASS" signature="VerifynameUserTest()[pri:0, instance:veritas.netbackup.testcases.HomePageTest@7cbd213e]" name="VerifynameUserTest" duration-ms="927" started-at="2018-09-06T17:54:28Z" finished-at="2018-09-06T17:54:29Z">
+        <test-method status="PASS" signature="VerifynameUserTest()[pri:0, instance:veritas.netbackup.testcases.DashboardPageTest@382db087]" name="VerifynameUserTest" duration-ms="534" started-at="2018-10-04T16:53:47Z" finished-at="2018-10-04T16:53:47Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VerifynameUserTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:veritas.netbackup.testcases.HomePageTest@7cbd213e]" name="tearDown" is-config="true" duration-ms="7043" started-at="2018-09-06T17:54:29Z" finished-at="2018-09-06T17:54:36Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:veritas.netbackup.testcases.DashboardPageTest@382db087]" name="tearDown" is-config="true" duration-ms="3787" started-at="2018-10-04T16:53:47Z" finished-at="2018-10-04T16:53:51Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="SetUp()[pri:0, instance:veritas.netbackup.testcases.HomePageTest@7cbd213e]" name="SetUp" is-config="true" duration-ms="8398" started-at="2018-09-06T17:54:36Z" finished-at="2018-09-06T17:54:45Z">
+        <test-method status="PASS" signature="SetUp()[pri:0, instance:veritas.netbackup.testcases.DashboardPageTest@382db087]" name="SetUp" is-config="true" duration-ms="7417" started-at="2018-10-04T16:53:51Z" finished-at="2018-10-04T16:53:58Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SetUp -->
-        <test-method status="PASS" signature="verifyHomePageTitleTest()[pri:0, instance:veritas.netbackup.testcases.HomePageTest@7cbd213e]" name="verifyHomePageTitleTest" duration-ms="15" started-at="2018-09-06T17:54:45Z" finished-at="2018-09-06T17:54:45Z">
+        <test-method status="PASS" signature="verifyCertificateBoxTest()[pri:0, instance:veritas.netbackup.testcases.DashboardPageTest@382db087]" name="verifyCertificateBoxTest" duration-ms="1551" started-at="2018-10-04T16:53:58Z" finished-at="2018-10-04T16:54:00Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyHomePageTitleTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:veritas.netbackup.testcases.HomePageTest@7cbd213e]" name="tearDown" is-config="true" duration-ms="5337" started-at="2018-09-06T17:54:45Z" finished-at="2018-09-06T17:54:50Z">
+        </test-method> <!-- verifyCertificateBoxTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:veritas.netbackup.testcases.DashboardPageTest@382db087]" name="tearDown" is-config="true" duration-ms="3269" started-at="2018-10-04T16:54:00Z" finished-at="2018-10-04T16:54:03Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- veritas.netbackup.testcases.HomePageTest -->
+        <test-method status="PASS" signature="SetUp()[pri:0, instance:veritas.netbackup.testcases.DashboardPageTest@382db087]" name="SetUp" is-config="true" duration-ms="7816" started-at="2018-10-04T16:54:03Z" finished-at="2018-10-04T16:54:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SetUp -->
+        <test-method status="PASS" signature="verifyDateAndMonthTest()[pri:0, instance:veritas.netbackup.testcases.DashboardPageTest@382db087]" name="verifyDateAndMonthTest" duration-ms="2921" started-at="2018-10-04T16:54:11Z" finished-at="2018-10-04T16:54:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyDateAndMonthTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:veritas.netbackup.testcases.DashboardPageTest@382db087]" name="tearDown" is-config="true" duration-ms="1170" started-at="2018-10-04T16:54:14Z" finished-at="2018-10-04T16:54:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="SetUp()[pri:0, instance:veritas.netbackup.testcases.DashboardPageTest@382db087]" name="SetUp" is-config="true" duration-ms="7603" started-at="2018-10-04T16:54:15Z" finished-at="2018-10-04T16:54:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SetUp -->
+        <test-method status="PASS" signature="verifyDateTest()[pri:0, instance:veritas.netbackup.testcases.DashboardPageTest@382db087]" name="verifyDateTest" duration-ms="900" started-at="2018-10-04T16:54:23Z" finished-at="2018-10-04T16:54:24Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyDateTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:veritas.netbackup.testcases.DashboardPageTest@382db087]" name="tearDown" is-config="true" duration-ms="3144" started-at="2018-10-04T16:54:24Z" finished-at="2018-10-04T16:54:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="SetUp()[pri:0, instance:veritas.netbackup.testcases.DashboardPageTest@382db087]" name="SetUp" is-config="true" duration-ms="8123" started-at="2018-10-04T16:54:27Z" finished-at="2018-10-04T16:54:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SetUp -->
+        <test-method status="PASS" signature="verifyDayOfWeekTest()[pri:0, instance:veritas.netbackup.testcases.DashboardPageTest@382db087]" name="verifyDayOfWeekTest" duration-ms="2663" started-at="2018-10-04T16:54:35Z" finished-at="2018-10-04T16:54:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyDayOfWeekTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:veritas.netbackup.testcases.DashboardPageTest@382db087]" name="tearDown" is-config="true" duration-ms="1089" started-at="2018-10-04T16:54:37Z" finished-at="2018-10-04T16:54:39Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="SetUp()[pri:0, instance:veritas.netbackup.testcases.DashboardPageTest@382db087]" name="SetUp" is-config="true" duration-ms="7564" started-at="2018-10-04T16:54:39Z" finished-at="2018-10-04T16:54:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SetUp -->
+        <test-method status="PASS" signature="verifyHomePageTitleTest()[pri:0, instance:veritas.netbackup.testcases.DashboardPageTest@382db087]" name="verifyHomePageTitleTest" duration-ms="8" started-at="2018-10-04T16:54:46Z" finished-at="2018-10-04T16:54:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyHomePageTitleTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:veritas.netbackup.testcases.DashboardPageTest@382db087]" name="tearDown" is-config="true" duration-ms="4071" started-at="2018-10-04T16:54:46Z" finished-at="2018-10-04T16:54:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="SetUp()[pri:0, instance:veritas.netbackup.testcases.DashboardPageTest@382db087]" name="SetUp" is-config="true" duration-ms="7630" started-at="2018-10-04T16:54:50Z" finished-at="2018-10-04T16:54:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SetUp -->
+        <test-method status="PASS" signature="verifyJobBoxTest()[pri:0, instance:veritas.netbackup.testcases.DashboardPageTest@382db087]" name="verifyJobBoxTest" duration-ms="1785" started-at="2018-10-04T16:54:58Z" finished-at="2018-10-04T16:55:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyJobBoxTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:veritas.netbackup.testcases.DashboardPageTest@382db087]" name="tearDown" is-config="true" duration-ms="1599" started-at="2018-10-04T16:55:00Z" finished-at="2018-10-04T16:55:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="SetUp()[pri:0, instance:veritas.netbackup.testcases.DashboardPageTest@382db087]" name="SetUp" is-config="true" duration-ms="7573" started-at="2018-10-04T16:55:01Z" finished-at="2018-10-04T16:55:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SetUp -->
+        <test-method status="PASS" signature="verifySmartmeterBoxTest()[pri:0, instance:veritas.netbackup.testcases.DashboardPageTest@382db087]" name="verifySmartmeterBoxTest" duration-ms="3630" started-at="2018-10-04T16:55:09Z" finished-at="2018-10-04T16:55:12Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySmartmeterBoxTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:veritas.netbackup.testcases.DashboardPageTest@382db087]" name="tearDown" is-config="true" duration-ms="1233" started-at="2018-10-04T16:55:12Z" finished-at="2018-10-04T16:55:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="SetUp()[pri:0, instance:veritas.netbackup.testcases.DashboardPageTest@382db087]" name="SetUp" is-config="true" duration-ms="7733" started-at="2018-10-04T16:55:14Z" finished-at="2018-10-04T16:55:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SetUp -->
+        <test-method status="PASS" signature="verifyTokensBoxTest()[pri:0, instance:veritas.netbackup.testcases.DashboardPageTest@382db087]" name="verifyTokensBoxTest" duration-ms="2149" started-at="2018-10-04T16:55:21Z" finished-at="2018-10-04T16:55:24Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyTokensBoxTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:veritas.netbackup.testcases.DashboardPageTest@382db087]" name="tearDown" is-config="true" duration-ms="1637" started-at="2018-10-04T16:55:24Z" finished-at="2018-10-04T16:55:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- veritas.netbackup.testcases.DashboardPageTest -->
+      <class name="veritas.netbackup.testcases.LoginPageTest">
+        <test-method status="PASS" signature="SetUp()[pri:0, instance:veritas.netbackup.testcases.LoginPageTest@b9afc07]" name="SetUp" is-config="true" duration-ms="22086" started-at="2018-10-04T16:52:41Z" finished-at="2018-10-04T16:53:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SetUp -->
+        <test-method status="PASS" signature="NetbackupLogoTest()[pri:0, instance:veritas.netbackup.testcases.LoginPageTest@b9afc07]" name="NetbackupLogoTest" duration-ms="869" started-at="2018-10-04T16:53:03Z" finished-at="2018-10-04T16:53:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- NetbackupLogoTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:veritas.netbackup.testcases.LoginPageTest@b9afc07]" name="tearDown" is-config="true" duration-ms="797" started-at="2018-10-04T16:53:04Z" finished-at="2018-10-04T16:53:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="SetUp()[pri:0, instance:veritas.netbackup.testcases.LoginPageTest@b9afc07]" name="SetUp" is-config="true" duration-ms="7440" started-at="2018-10-04T16:53:04Z" finished-at="2018-10-04T16:53:12Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SetUp -->
+        <test-method status="PASS" signature="NetbackupSubtitleTest()[pri:0, instance:veritas.netbackup.testcases.LoginPageTest@b9afc07]" name="NetbackupSubtitleTest" duration-ms="158" started-at="2018-10-04T16:53:12Z" finished-at="2018-10-04T16:53:12Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- NetbackupSubtitleTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:veritas.netbackup.testcases.LoginPageTest@b9afc07]" name="tearDown" is-config="true" duration-ms="640" started-at="2018-10-04T16:53:12Z" finished-at="2018-10-04T16:53:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="SetUp()[pri:0, instance:veritas.netbackup.testcases.LoginPageTest@b9afc07]" name="SetUp" is-config="true" duration-ms="7417" started-at="2018-10-04T16:53:13Z" finished-at="2018-10-04T16:53:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SetUp -->
+        <test-method status="PASS" signature="NetbackupTitleTest()[pri:0, instance:veritas.netbackup.testcases.LoginPageTest@b9afc07]" name="NetbackupTitleTest" duration-ms="70" started-at="2018-10-04T16:53:20Z" finished-at="2018-10-04T16:53:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- NetbackupTitleTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:veritas.netbackup.testcases.LoginPageTest@b9afc07]" name="tearDown" is-config="true" duration-ms="693" started-at="2018-10-04T16:53:20Z" finished-at="2018-10-04T16:53:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="SetUp()[pri:0, instance:veritas.netbackup.testcases.LoginPageTest@b9afc07]" name="SetUp" is-config="true" duration-ms="7356" started-at="2018-10-04T16:53:21Z" finished-at="2018-10-04T16:53:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SetUp -->
+        <test-method status="PASS" signature="loginPageTitleTest()[pri:0, instance:veritas.netbackup.testcases.LoginPageTest@b9afc07]" name="loginPageTitleTest" duration-ms="62" started-at="2018-10-04T16:53:28Z" finished-at="2018-10-04T16:53:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginPageTitleTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:veritas.netbackup.testcases.LoginPageTest@b9afc07]" name="tearDown" is-config="true" duration-ms="668" started-at="2018-10-04T16:53:28Z" finished-at="2018-10-04T16:53:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="SetUp()[pri:0, instance:veritas.netbackup.testcases.LoginPageTest@b9afc07]" name="SetUp" is-config="true" duration-ms="7281" started-at="2018-10-04T16:53:29Z" finished-at="2018-10-04T16:53:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SetUp -->
+        <test-method status="PASS" signature="loginTest()[pri:0, instance:veritas.netbackup.testcases.LoginPageTest@b9afc07]" name="loginTest" duration-ms="1146" started-at="2018-10-04T16:53:36Z" finished-at="2018-10-04T16:53:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:veritas.netbackup.testcases.LoginPageTest@b9afc07]" name="tearDown" is-config="true" duration-ms="1090" started-at="2018-10-04T16:53:37Z" finished-at="2018-10-04T16:53:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- veritas.netbackup.testcases.LoginPageTest -->
     </test> <!-- Netbackup Test Cases -->
   </suite> <!-- Netbackup Application Test Automation Test Suite -->
 </testng-results>

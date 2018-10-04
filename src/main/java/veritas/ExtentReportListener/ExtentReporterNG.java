@@ -1,4 +1,4 @@
-package com.qa.ExtentReportListener;
+package veritas.ExtentReportListener;
 
 import java.io.File;
 import java.util.Calendar;

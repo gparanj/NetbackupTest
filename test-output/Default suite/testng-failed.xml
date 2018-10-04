@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.qa.ExtentReportListener.ExtentReport">
+      <class name="veritas.netbackup.testcases.DashboardPageTest">
         <methods>
-          <include name="beforeClass"/>
-          <include name="beforeMethod"/>
-          <include name="TestLogout"/>
-          <include name="afterClass"/>
-          <include name="TestLogin"/>
-          <include name="afterMethod"/>
+          <include name="VerifynameUserTest"/>
+          <include name="verifySmartmeterBoxTest"/>
+          <include name="tearDown"/>
+          <include name="verifyDayOfWeekTest"/>
+          <include name="verifyTokensBoxTest"/>
+          <include name="verifyCertificateBoxTest"/>
+          <include name="verifyDateAndMonthTest"/>
+          <include name="verifyJobBoxTest"/>
+          <include name="verifyHomePageTitleTest"/>
+          <include name="SetUp"/>
+          <include name="verifyDateTest"/>
         </methods>
-      </class> <!-- com.qa.ExtentReportListener.ExtentReport -->
+      </class> <!-- veritas.netbackup.testcases.DashboardPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -17,6 +17,7 @@ public class ReadProp {
 	public static void main(String[] args) throws IOException {
 		
 		WebDriver driver = null;
+				
 	
 		//How to read properties file
 		Properties prop = new Properties();
@@ -29,12 +30,15 @@ public class ReadProp {
 		if (browserName.equals("Firefox")){
 			 System.setProperty("WebDriver.gecko.driver","C:\\BCSE4\\NetbackupTest\\geckodriver.exe");
 			 driver = new FirefoxDriver();
+			 
 		}else if(browserName.equals("chrome")){
 			 System.setProperty("WebDriver.chrome.driver","C:\\BCSE4\\NetbackupTest\\chromedriver.exe");
 			 driver =new ChromeDriver();
+			 
 		}else {
 			System.out.println("No browser value is given");
 		}
+		
 		
 		driver.get(prop.getProperty("url"));
 		

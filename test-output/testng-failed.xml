@@ -2,17 +2,25 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Netbackup Application Test Automation Test Suite]">
   <listeners>
-    <listener class-name="com.qa.ExtentReportListener.ExtentReporterNG"/>
+    <listener class-name="veritas.ExtentReportListener.ExtentReporterNG"/>
   </listeners>
   <test thread-count="5" name="Netbackup Test Cases(failed)">
     <classes>
-      <class name="veritas.netbackup.testcases.HomePageTest">
+      <class name="veritas.netbackup.testcases.DashboardPageTest">
         <methods>
           <include name="VerifynameUserTest"/>
-          <include name="SetUp"/>
+          <include name="verifySmartmeterBoxTest"/>
           <include name="tearDown"/>
+          <include name="verifyDayOfWeekTest"/>
+          <include name="verifyTokensBoxTest"/>
+          <include name="verifyCertificateBoxTest"/>
+          <include name="verifyDateAndMonthTest"/>
+          <include name="verifyJobBoxTest"/>
+          <include name="verifyHomePageTitleTest"/>
+          <include name="SetUp"/>
+          <include name="verifyDateTest"/>
         </methods>
-      </class> <!-- veritas.netbackup.testcases.HomePageTest -->
+      </class> <!-- veritas.netbackup.testcases.DashboardPageTest -->
     </classes>
   </test> <!-- Netbackup Test Cases(failed) -->
 </suite> <!-- Failed suite [Netbackup Application Test Automation Test Suite] -->
