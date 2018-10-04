@@ -6,7 +6,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import veritas.netbackup.base.TestBase;
-import veritas.netbackup.pages.HomePage;
+import veritas.netbackup.pages.DashboardPage;
 import veritas.netbackup.pages.LoginPage;
 import veritas.netbackup.pages.ProtectionPlanPage;
 import veritas.netbackup.util.TestUtil;
@@ -15,7 +15,7 @@ public class ProtectionplanPageTest extends TestBase{
 	
 	TestUtil testutil;
 	LoginPage loginPage;
-	HomePage homePage;
+	DashboardPage dashboardPage;
 	ProtectionPlanPage protectionplanPage;
 	
 	public ProtectionplanPageTest() {
@@ -28,8 +28,8 @@ public class ProtectionplanPageTest extends TestBase{
 		loginPage = new LoginPage();
 		protectionplanPage = new ProtectionPlanPage();
 		testutil = new TestUtil();
-		homePage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
-		protectionplanPage = homePage.clickOnProtectionPlan();
+		dashboardPage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
+		protectionplanPage = dashboardPage.clickOnProtectionPlan();
 	}
 
 	
@@ -59,7 +59,7 @@ public class ProtectionplanPageTest extends TestBase{
 	
 	@AfterMethod
 	public void tearDown() throws InterruptedException {
-		homePage= new HomePage();
+		dashboardPage= new DashboardPage();
 		testutil.logout();
 		driver.quit();
 	}

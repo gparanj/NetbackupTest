@@ -1,17 +1,15 @@
 package veritas.netbackup.testcases;
 
-import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import veritas.netbackup.base.TestBase;
-import veritas.netbackup.pages.HomePage;
+import veritas.netbackup.pages.DashboardPage;
 import veritas.netbackup.pages.LoginPage;
 import veritas.netbackup.pages.VMwarePage;
 import veritas.netbackup.util.TestUtil;
@@ -20,8 +18,10 @@ public class VMwarePageTest extends TestBase {
 	
 	TestUtil testutil;
 	LoginPage loginPage;
-	HomePage homePage;
+	DashboardPage dashboardPage;
 	VMwarePage vmwarePage;
+	
+	String sheetName="ESXi";
 	
 	public VMwarePageTest() {
 		super();
@@ -31,11 +31,14 @@ public class VMwarePageTest extends TestBase {
 	@BeforeMethod
 	public void SetUp() throws InterruptedException {
 		initialization();
+		driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
 		loginPage = new LoginPage();
 		vmwarePage = new VMwarePage();
 		testutil = new TestUtil();
-		homePage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
-		vmwarePage = homePage.clickOnVmware();
+		dashboardPage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
+		vmwarePage = dashboardPage.clickOnVmware();
+		driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
+		
 	}
 	
 	
@@ -54,7 +57,7 @@ public class VMwarePageTest extends TestBase {
 	
 	
 	@Test
-	public void VirtualMachinesTabTest() {
+	public void VirtualMachinesTabTest() throws InterruptedException {
 		boolean VMT = vmwarePage.verifyVirtualMachinesTab();
 		Assert.assertTrue(VMT);
 	}
@@ -73,59 +76,65 @@ public class VMwarePageTest extends TestBase {
 		Assert.assertTrue(IAVMT);
 	}
 	
+	@DataProvider
+	public Object[][] getNetbackupTestData() {
+		Object data[][]= TestUtil.getTestData(sheetName);
+		return data;
+		
+	}
 	
-	@Test
-	public void ServersTabTest() throws InterruptedException {
-		driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
+	
+	@Test(dataProvider="getNetbackupTestData")
+	public void ServersTabTest(String Name) throws InterruptedException{
 		Assert.assertTrue(testutil.verifySearchButton());
 		Assert.assertTrue(testutil.verifyRefreshButton());
 		vmwarePage.clickOnServer();
 		testutil.add();
 		vmwarePage.clickOnEsxi();
-		WebElement host1 = driver.findElement(By.xpath("//*[@class='overlay-content__credentials']//*//*//*//*//*[@placeholder='Host name']"));
-		
-		@SuppressWarnings("resource")
-		Scanner scan = new Scanner(System.in);
-		System.out.println("Enter the name of Vsphere:");
-		String host = scan.nextLine();
-		
-		System.out.println("The entered name is:");
-		System.out.print(host);
-		host1.sendKeys(host);
-		
-		Thread.sleep(2000);
-		
+		driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
+		vmwarePage.gethostname(Name);
+		driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
 		vmwarePage.serverUsername();
 		vmwarePage.serverPassword();
-		Thread.sleep(1000);
-		
-		testutil.save();
+		testutil.save1();
 		testutil.Stop_Services();
+		driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
 		testutil.Start_Services();
-		vmwarePage.clickOnVirtualMachineTab();
-	}
-		
-		
+		driver.navigate().refresh();	
+
+	}	
 		
 		@Test
-		public void clickOnIntelligentVMgroupsTab() {
-			vmwarePage.clickOnVirtualMachineTab();
+		public void clickOnIntelligentVMgroupsTab() throws InterruptedException {
+			vmwarePage.clickOnIntelligentVMgroupsTab();
+			driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
 			Assert.assertTrue(testutil.verifySearchButton());
 			Assert.assertTrue(testutil.verifyRefreshButton());
 			Assert.assertTrue(testutil.verifyShowOrHideColoumnButton());
-			Assert.assertTrue(testutil.add());
+			Assert.assertTrue(testutil.verifyAdd());
 				
 		}
 		
 		
 		@Test
-		public void clickOnVirtualMachineTab() {
+		public void clickOnVirtualMachineTab() throws InterruptedException {
 			vmwarePage.clickOnVirtualMachineTab();
+			driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
 			Assert.assertTrue(testutil.verifySearchButton());
 			Assert.assertTrue(testutil.verifyRefreshButton());
 			Assert.assertTrue(testutil.verifyShowOrHideColoumnButton());
 			Assert.assertTrue(testutil.verifyDensityDisplayButton());
-			driver.manage().timeouts().implicitlyWait(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
+			driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
+			vmwarePage.clickOnVM();
+			vmwarePage.clickOnConfigureProtection();
+			Thread.sleep(1000);
+			vmwarePage.clickOnProtect();
+			driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
+			vmwarePage.clickOnClose();
+			driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
+			driver.navigate().refresh();
+			driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
+
 		}
 	
 	
@@ -134,7 +143,7 @@ public class VMwarePageTest extends TestBase {
 	
 	@AfterMethod
 	public void tearDown() throws InterruptedException {
-		homePage= new HomePage();
+		dashboardPage= new DashboardPage();
 		testutil.logout();
 		driver.quit();
 	}

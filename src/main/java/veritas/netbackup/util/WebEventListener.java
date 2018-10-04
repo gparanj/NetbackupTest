@@ -19,7 +19,7 @@ public class WebEventListener extends TestBase implements WebDriverEventListener
 	}
 	
 	public void AfterFindBy(By by, WebElement element, WebDriver driver) {
-		System.out.println("found element by" + by.toString());
+		System.out.println("Found element by" + by.toString());
 	}
 
 	public void beforeAlertAccept(WebDriver driver) {
@@ -104,32 +104,32 @@ public class WebEventListener extends TestBase implements WebDriverEventListener
 	}
 
 	public void beforeNavigateTo(String url, WebDriver driver) {
-		System.out.println("Navigated to: '" + url + "'");
+		System.out.println("\nTrying to navigate to: '" + url + "'");
 		
 	}
 
 	public void afterNavigateTo(String url, WebDriver driver) {
-		System.out.println("After Navigating to: '" + url + "'");
+		System.out.println("\nAfter Navigating to: '" + url + "'");
 		
 	}
 
 	public void beforeNavigateBack(WebDriver driver) {
-		System.out.println("Navigated back to previous page");
+		System.out.println("\nTrying to navigate back to previous page");
 		
 	}
 
 	public void afterNavigateBack(WebDriver driver) {
-		System.out.println("Navigated back to previous page");
+		System.out.println("\nNavigated back to previous page");
 		
 	}
 
 	public void beforeNavigateForward(WebDriver driver) {
-		System.out.println("Navigated forword to next page");
+		System.out.println("\nTrying to navigate forword to next page");
 		
 	}
 
 	public void afterNavigateForward(WebDriver driver) {
-		System.out.println("Navigated forword to next page");
+		System.out.println("\nNavigated forword to next page");
 		
 	}
 
@@ -139,7 +139,7 @@ public class WebEventListener extends TestBase implements WebDriverEventListener
 	}
 
 	public void afterFindBy(By by, WebElement element, WebDriver driver) {
-		System.out.println("found element by" + by.toString());
+		System.out.println("Found element by" + by.toString());
 		
 	}
 

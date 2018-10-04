@@ -9,9 +9,6 @@ import veritas.netbackup.base.TestBase;
 import veritas.netbackup.util.TestUtil;
 
 
-
-
-
 public class LoginPage extends TestBase{
 		
 		//Page Factory / Object Repository
@@ -55,13 +52,13 @@ public class LoginPage extends TestBase{
 			return netbackup_subtitle.isDisplayed();
 		}
 		
-		public HomePage login(String un, String pwd) throws InterruptedException {
+		public DashboardPage login(String un, String pwd) throws InterruptedException {
+			driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
 			username.sendKeys(un);
 			password.sendKeys(pwd);
-			Thread.sleep(1000);
+			driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
 			loginbtn.click();
-			driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
-			return new HomePage();
+			return new DashboardPage();
 		}
 		
 }

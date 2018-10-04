@@ -36,6 +36,20 @@ public class VMwarePage extends TestBase {
 			@FindBy(xpath="//*[@class='overlay-content__credentials']//*[@label='Password']//*//*//*//*[@placeholder='Password']")
 			WebElement serverpassword;
 			
+			@FindBy(xpath="//*[@class='overlay-content__credentials']//*//*//*//*//*[@placeholder='Host name']")
+			WebElement host;
+			
+			@FindBy(xpath="//*[contains(text(),' ch-w8r2-1 ')]//parent::*//parent::*//preceding-sibling::*//*[@class='data-table-body-cell-label']")
+			WebElement vm;
+			
+			@FindBy(xpath="//*[contains(text(),' Configure protection ')]")
+			WebElement configure_protection;
+			
+			@FindBy(xpath="//span[@class='vdl-button-wrapper'][contains(text(),'Protect')]")
+			WebElement protect;
+			
+			@FindBy(xpath="//*[contains(text(),' Close ')]")
+			WebElement close;
 			
 			//Initializing the Page Objects
 			public VMwarePage() {
@@ -47,6 +61,10 @@ public class VMwarePage extends TestBase {
 				return VMwareLabel.isDisplayed();	
 			}
 			
+			public void gethostname(String vmname) {
+				host.sendKeys(vmname);
+				
+			}
 			
 			public String VarifyVMwarePageTitle() {
 				return driver.getTitle();
@@ -94,4 +112,19 @@ public class VMwarePage extends TestBase {
 				Intelligent_VM_groups.click();
 			}
 			
+			public void clickOnVM() {
+				vm.click();
+			}
+			
+			public void clickOnConfigureProtection() {
+				configure_protection.click();
+			}
+			
+			public void clickOnProtect() {
+				protect.click();
+			}
+			
+			public void clickOnClose() {
+				close.click();
+			}
 }

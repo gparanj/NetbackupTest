@@ -5,35 +5,89 @@ import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import veritas.netbackup.base.TestBase;
 
 public class TestUtil extends TestBase {
 
-	public static long PAGE_LOAD_TIMEOUT = 30;
-	public static long IMPLICIT_WAIT = 20;
+	public static long PAGE_LOAD_TIMEOUT = 100;
+	public static long IMPLICIT_WAIT = 50;
+	
+	
+	public static String TESTDATA_SHEET_PATH = "C:\\BCSE4\\NetbackupTest\\src\\main\\java\\veritas\\netbackup\\testdata\\NetbackupTestData.xlsx";
+		   static Workbook book;
+		   static Sheet sheet;
+	
+	public static Object[][] getTestData(String sheetName){
+		FileInputStream file = null;
+		try {
+			file= new FileInputStream(TESTDATA_SHEET_PATH);
+		}catch(FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		try {
+			book = WorkbookFactory.create(file);
+		}catch(IOException e) {
+			e.printStackTrace();
+		}
+		
+		sheet= book.getSheet(sheetName);
+		Object[][] data= new Object[sheet.getLastRowNum()][sheet.getRow(0).getLastCellNum()];
+		for (int i=0; i<sheet.getLastRowNum(); i++) {
+			for (int k=0; k<sheet.getRow(0).getLastCellNum(); k++) {
+				data[i][k]=sheet.getRow(i+1).getCell(k).toString();
+			}
+		}
+		return data;	
+	}
+	
+	
+	public static void clickOn(WebDriver driver, WebElement element, int timeout) {
+		new WebDriverWait(driver, timeout).until(ExpectedConditions.elementToBeClickable(element));
+		element.click();
+	}
+	
+	public static void sendKeys(WebDriver driver, WebElement element, int timeout, String value) {
+		new WebDriverWait(driver, timeout).until(ExpectedConditions.visibilityOf(element));
+		element.sendKeys(value);
+	}
 	
 	public void logout() throws InterruptedException {
-		driver.findElement(By.xpath("//*[@class='vdl-top-bar-actions']//*[@class='top-bar__settings-button ng-star-inserted']//following-sibling::*[@id='user__menu']")).click();
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//*[@class='vdl-menu-item']//*[@fonticon='fa-sign-out']")).click();
+		driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
+		WebElement firstElement = driver.findElement(By.xpath("//*[@class='vdl-top-bar-actions']//*[@class='top-bar__settings-button ng-star-inserted']//following-sibling::*[@id='user__menu']"));
+		clickOn(driver, firstElement, 20);
+		WebElement secondElement =driver.findElement(By.xpath("//*[@aria-label='fa-sign-out']//parent::*//preceding-sibling::*[@class='top-bar__settings-menu-item vdl-menu-item ng-star-inserted']//parent::*//parent::*//parent::*[@id='cdk-overlay-0']"));
+		clickOn(driver, secondElement, 30);	
 	}
 	
-	public boolean add() {
-		//click on add
+	
+	
+	public void add() {
 		driver.findElement(By.cssSelector("button[class='mini vo ng-star-inserted']")).click();
+	}
+	
+	
+	public boolean verifyAdd() {
 		return driver.findElement(By.cssSelector("button[class='mini vo ng-star-inserted']")).isDisplayed();
 	}
-	
 	
 	public void save() {
 		int i;
@@ -42,11 +96,16 @@ public class TestUtil extends TestBase {
 		}
 	}
 	
+	public void save1() {
+		driver.findElement(By.xpath("//*[contains(text(),'Save')]")).click();
+		}
+	
+	
 	public boolean Stop_Services() throws InterruptedException {
 		
-		Thread.sleep(3000);
+		driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
         ProcessBuilder builder = new ProcessBuilder("cmd.exe", "/c", "cd \"C:\\Program files\\Veritas\\Netbackup\\Bin\" && bpdown -v -f");
-        System.out.println("\n\n Services are stopping");
+        System.out.println("\n\nServices are stopping");
         builder.redirectErrorStream(true);
         Process p;
 		try {
@@ -59,7 +118,6 @@ public class TestUtil extends TestBase {
 		            System.out.println(line);
 		        }
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
        
@@ -70,9 +128,9 @@ public class TestUtil extends TestBase {
 
 	public boolean Start_Services() throws InterruptedException {
 	
-		Thread.sleep(2000);
+		driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
 		ProcessBuilder builder = new ProcessBuilder("cmd.exe", "/c", "cd \"C:\\Program files\\Veritas\\Netbackup\\Bin\" && bpup -v -f");
-		System.out.println("\n\n Services are starting");
+		System.out.println("\n\nServices are starting");
 		builder.redirectErrorStream(true);
 		Process p;
 		try {
@@ -85,7 +143,6 @@ public class TestUtil extends TestBase {
 					System.out.println(line);
 				}
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
   
@@ -115,7 +172,7 @@ public class TestUtil extends TestBase {
 		System.out.print(description1);
 		description.sendKeys(description1);
 		
-		Thread.sleep(3000);
+		driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
 	}
 	
 	public void scrolldown() throws AWTException {
@@ -150,6 +207,6 @@ public class TestUtil extends TestBase {
 		File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		String currentDir = System.getProperty("user.dir");
 			FileUtils.copyFile(srcFile, new File(currentDir + "/screenshots/" + System.currentTimeMillis() + ".png"));
-		}
-	
+	}
+
 }

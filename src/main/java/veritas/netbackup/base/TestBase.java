@@ -10,7 +10,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
-
 import veritas.netbackup.util.TestUtil;
 import veritas.netbackup.util.WebEventListener;
 
@@ -51,8 +50,9 @@ public class TestBase {
 		}
 		else if(browserName.equals("chrome")) {
 			System.setProperty("WebDriver.chrome.driver","C:\\BCSE4\\NetbackupTest\\chromedriver.exe");
-			 driver =new ChromeDriver();	
+			driver = new ChromeDriver();
 		}
+		
 		
 		 e_driver = new EventFiringWebDriver(driver);
 		 eventlistener =new WebEventListener();
@@ -65,6 +65,7 @@ public class TestBase {
 	 	 driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
 	 	 
 	 	 driver.get(prop.getProperty("url"));
+	 	 driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
 			 	
 	}
 	

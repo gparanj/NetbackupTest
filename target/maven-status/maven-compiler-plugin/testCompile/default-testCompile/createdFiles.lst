@@ -1,0 +1,5 @@
+veritas\netbackup\testcases\VMwarePageTest.class
+veritas\netbackup\testcases\LoginPageTest.class
+veritas\netbackup\testcases\CreateProtectionPlanPageTest.class
+veritas\netbackup\testcases\HomePageTest.class
+veritas\netbackup\testcases\ProtectionplanPageTest.class

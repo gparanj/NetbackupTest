@@ -1,0 +1,13 @@
+veritas\netbackup\base\GenerateLogs.class
+veritas\netbackup\base\ReadProp.class
+veritas\netbackup\pages\HomePage.class
+veritas\netbackup\pages\JobsPage.class
+veritas\netbackup\util\WebEventListener.class
+veritas\netbackup\pages\CreateProtectionPlanPage.class
+veritas\netbackup\base\TestBase.class
+veritas\netbackup\pages\DashboardPage.class
+veritas\netbackup\pages\VMwarePage.class
+veritas\netbackup\util\TestUtil.class
+veritas\netbackup\pages\ProtectionPlanPage.class
+com\qa\ExtentReportListener\ExtentReporterNG.class
+veritas\netbackup\pages\LoginPage.class
